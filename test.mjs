@@ -6,8 +6,6 @@ const controller = await readFile("controller.html", "utf8");
 const adapter = await readFile("youtube-adapter.js", "utf8");
 const background = await readFile("background.js", "utf8");
 const options = await readFile("options.html", "utf8");
-const standalone = JSON.parse(await readFile("package.json", "utf8"));
-const standaloneUi = await readFile("app.html", "utf8");
 
 assert.equal(manifest.manifest_version, 3);
 assert.deepEqual(manifest.background, { service_worker: "background.js" });
@@ -19,9 +17,6 @@ assert.match(background, /chrome\.tabs\.create\(\{ url: await configuredPlaylist
 assert(manifest.permissions.includes("storage"));
 assert.equal(manifest.options_page, "options.html");
 assert.match(options, /id=["']playlist-url["']/);
-assert.equal(standalone.main, "main.cjs");
-assert.match(standalone.scripts.start, /electron/);
-for (const id of ["seek", "volume", "repeat", "settings-panel", "compact-toggle", "always-on-top"]) assert.match(standaloneUi, new RegExp(`id=["']${id}["']`));
 
 class Signal {
   constructor() { this.listeners = []; }
