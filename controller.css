@@ -1,0 +1,31 @@
+:root { color-scheme: dark; font: 13px system-ui, sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 400px; background: #181818; color: #f1f1f1; }
+main { padding: 10px 12px 11px; }
+.topline, .title-row, .controls { display: flex; align-items: center; gap: 8px; }
+.topline { color: #aaa; font-size: 11px; margin-bottom: 5px; }
+.title-row { justify-content: space-between; }
+.title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; min-width: 0; }
+.text-button { border: 0; background: transparent; color: #65b8ff; padding: 2px 0; cursor: pointer; white-space: nowrap; }
+.text-button:hover, .text-button:focus-visible { color: #fff; text-decoration: underline; }
+.seek { width: 100%; margin: 8px 0 4px; accent-color: #ff0033; }
+.controls button { width: 30px; height: 28px; border: 0; border-radius: 4px; background: #292929; color: #eee; cursor: pointer; font-size: 15px; }
+.controls button:hover, .controls button:focus-visible { background: #444; outline: 2px solid #65b8ff; outline-offset: 1px; }
+.controls button[aria-pressed="true"] { color: #ff5473; }
+.controls .play { background: #ff0033; font-size: 16px; }
+.volume { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.volume input { width: 70px; accent-color: #ff0033; }
+.volume span { width: 32px; color: #aaa; font-size: 11px; }
+.repeat-control { display: flex; align-items: center; gap: 4px; color: #aaa; font-size: 11px; }
+.repeat-control select { background: #292929; color: #eee; border: 1px solid #555; border-radius: 3px; padding: 3px; }
+.message { margin: 7px 0 0; color: #ffb4b4; font-size: 11px; }
+button:disabled, input:disabled { opacity: .45; cursor: default; }
+:focus-visible { outline: 2px solid #65b8ff; outline-offset: 2px; }
+body.compact { min-width: 300px; }
+body.compact main { display: flex; align-items: center; gap: 6px; padding: 6px 8px; }
+body.compact .topline, body.compact .seek, body.compact .advanced, body.compact #settings, body.compact #open-youtube, body.compact .message { display: none; }
+body.compact .title-row { flex: 1; min-width: 0; }
+body.compact .title { flex: 1; }
+body.compact .controls { flex: 0 0 auto; }
+body.compact .controls button { width: 27px; height: 26px; }
+body.compact #compact-toggle { font-size: 11px; }

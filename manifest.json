@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Compact Controller",
+  "description": "A compact controller for a normal signed-in YouTube tab.",
+  "version": "0.1.0",
+  "permissions": ["tabs", "windows", "storage"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "Open YouTube controller"
+  },
+  "options_page": "options.html",
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/*"],
+    "js": ["youtube-adapter.js"],
+    "run_at": "document_idle"
+  }]
+}

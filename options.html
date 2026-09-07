@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YouTube controller settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>YouTube controller settings</h1>
+    <form id="settings-form">
+      <label for="playlist-url">Playlist to preload</label>
+      <input id="playlist-url" type="url" inputmode="url" placeholder="https://www.youtube.com/playlist?list=..." spellcheck="false">
+      <p>When no YouTube source is selected, Open YouTube loads this playlist. Leave it blank to open YouTube home.</p>
+      <div class="actions"><button type="submit">Save</button><button id="clear" type="button">Clear</button><span id="status" role="status"></span></div>
+    </form>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>

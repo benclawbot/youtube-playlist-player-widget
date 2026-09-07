@@ -1,0 +1,14 @@
+{
+  "name": "youtube-compact-player",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal standalone YouTube controller with an app-owned browser profile.",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node test.mjs"
+  },
+  "devDependencies": {
+    "electron": "^44.2.0"
+  }
+}
